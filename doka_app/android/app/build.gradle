@@ -1,4 +1,4 @@
- plugins {
+﻿ plugins {
      id "com.android.application"
      id "kotlin-android"
      id "dev.flutter.flutter-gradle-plugin"
@@ -24,7 +24,7 @@
  
  android {
      namespace "com.doka.app"
-     compileSdk flutter.compileSdkVersion
+     compileSdk 36
      ndkVersion flutter.ndkVersion
  
      compileOptions {
@@ -43,7 +43,7 @@
      defaultConfig {
          applicationId "com.doka.app"
          minSdkVersion flutter.minSdkVersion
-         targetSdk flutter.targetSdkVersion
+         targetSdk 36
          versionCode flutterVersionCode.toInteger()
          versionName flutterVersionName
      }
@@ -58,3 +58,4 @@
  flutter {
      source '../..'
  }
+
