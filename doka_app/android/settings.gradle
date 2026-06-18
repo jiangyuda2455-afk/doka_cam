@@ -1,0 +1,28 @@
+pluginManagement {
+    def flutterSdkPath = System.getenv("FLUTTER_ROOT")
+    if (flutterSdkPath == null || flutterSdkPath.isEmpty()) {
+        def properties = new Properties()
+        def propsFile = new File(settingsDir, "local.properties")
+        if (propsFile.exists()) {
+            propsFile.withInputStream { properties.load(it) }
+            flutterSdkPath = properties.getProperty("flutter.sdk")
+        }
+    }
+    if (flutterSdkPath == null || flutterSdkPath.isEmpty()) {
+        flutterSdkPath = "C:/flutter/flutter"
+    }
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+plugins {
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+    id "com.android.application" version "8.5.2" apply false
+    id "org.jetbrains.kotlin.android" version "1.9.0" apply false
+}
+include ":app"
