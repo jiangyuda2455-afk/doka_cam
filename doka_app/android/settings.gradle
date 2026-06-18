@@ -9,12 +9,10 @@ pluginManagement {
         }
     }
     if (flutterSdkPath == null || flutterSdkPath.isEmpty()) {
-        flutterSdkPath = "C:/flutter/flutter"
+        flutterSdkPath = "C:/flutter"
     }
     includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
         google()
         mavenCentral()
         gradlePluginPortal()
