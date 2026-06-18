@@ -23,6 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
+    namespace "com.doka.app"
     compileSdk 36
     ndkVersion flutter.ndkVersion
 
